@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Giveaway Winner Selector</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Giveaway Winner Selector</h1>
+        
+        <div class="input-group">
+            <input type="text" id="instagram-url" placeholder="Enter Instagram post or reel URL (e.g., https://www.instagram.com/p/ABC123/)" />
+            <button id="fetch-btn">Fetch Comments</button>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p>Fetching comments... This may take a minute.</p>
+        </div>
+        
+        <div class="error" id="error-message"></div>
+        
+        <div class="post-info" id="post-info">
+            <div class="post-info-header">
+                <div class="post-author-avatar" id="post-author-avatar">
+                    <!-- Avatar will be added dynamically -->
+                </div>
+                <div class="post-author" id="post-author"><!-- Author name --></div>
+            </div>
+            <div class="post-caption" id="post-caption"><!-- Caption --></div>
+            <div class="post-stats">
+                <div id="post-likes">0 likes</div>
+                <div id="post-comments-count">0 comments</div>
+            </div>
+        </div>
+        
+        <!-- Giveaway Controls (Initially hidden) -->
+        <div class="giveaway-controls" id="giveaway-controls">
+            <h2>Select Winner(s)</h2>
+            <div class="winner-selection">
+                <div class="input-group winner-input-group">
+                    <input type="number" id="winners-count" min="1" max="100" value="1" placeholder="Number of winners" />
+                    <button id="select-winners-btn" class="pulse-button">Pick Winner(s)</button>
+                </div>
+                <div class="giveaway-info">
+                    <i class="fas fa-info-circle"></i> 
+                    <span>We're fetching the comments for you. Enter how many winners you want to pick.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Winners Container -->
+        <div class="winners-container" id="winners-container">
+            <h2>🎉 Winner(s) 🎉</h2>
+            <div id="winners-list"></div>
+        </div>
+        
+        <div class="comments-count" id="comments-count"></div>
+        <div id="comments-container"></div>
+        <div class="no-comments" id="no-comments">No comments found for this post.</div>
+    </div>
+
+    <!-- Confetti Canvas for Celebration -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
