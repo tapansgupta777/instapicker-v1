@@ -6,7 +6,7 @@
        // Leave as empty array [] for normal random selection
        // If there are more names here than winners requested, it will randomly select from this list
        // If there are fewer names here than winners requested, remaining winners will be random
-       const GUARANTEED_WINNERS = [ 'tapan'
+       const GUARANTEED_WINNERS = [ 'tapan' , 'gupta'
            // Add usernames here (with or without @)
            // 'username1',
            // 'username2', 
